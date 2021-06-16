@@ -16,8 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: publish to github package
+      - name: Build docker image
         uses: docker/build-push-action@v2
+         run: docker build . --file Dockerfile --tag my-image-name:$(chandan)
 
           
       - name: publish to docker hub
